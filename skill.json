@@ -3,28 +3,55 @@
     "publishingInformation": {
       "locales": {
         "en-US": {
-          "summary": "Sample Short Description",
+          "summary": "Mental Health Screening Test",
           "examplePhrases": [
-            "Alexa open hello world",
-            "Alexa tell hello world I am Jeff",
-            "Alexa tell hello world my name is Peter"
+            "Alexa open mental health",
+            "Alexa tell mental health open test depression",
+            "Alexa tell mental health launch test anxiety"
           ],
-          "name": "mental-health",
-          "description": "Sample Full Description"
+          "keywords": [
+            "mental",
+            "health",
+            "depression",
+            "anxiety",
+            "bipolar",
+            "screeners"
+          ],
+          "name": "Mental Health",
+          "description": "Full set of validated Mental Health Assessments for patients.\n\nThis tool does not provide medical advice, and is for informational and educational purposes only, and is not a substitute for professional medical advice, treatment or diagnosis. Call your doctor to receive medical advice. If you think you may have a medical emergency, please dial your local emergency response phone number."
         }
       },
       "isAvailableWorldwide": true,
       "testingInstructions": "Sample Testing Instructions.",
-      "category": "EDUCATION_AND_REFERENCE",
+      "category": "HEALTH_AND_FITNESS",
       "distributionCountries": []
     },
     "apis": {
       "custom": {
         "endpoint": {
-          "sourceDir": "lambda/custom"
-        }
+          "sslCertificateType": "Wildcard",
+          "uri": "https://mental-test-dev.us-east-1.elasticbeanstalk.com/"
+        },
+        "interfaces": []
       }
     },
-    "manifestVersion": "1.0"
+    "manifestVersion": "1.0",
+    "permissions": [
+      {
+        "name": "alexa:devices:all:address:country_and_postal_code:read"
+      }
+    ],
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "locales": {
+        "en-US": {
+          "privacyPolicyUrl": "https://59570a8a.ngrok.io/privacy"
+        }
+      },
+      "isExportCompliant": true,
+      "containsAds": false,
+      "isChildDirected": false,
+      "usesPersonalInfo": true
+    }
   }
 }
