@@ -18,7 +18,8 @@
             "screeners"
           ],
           "name": "Mental Health",
-          "description": "Full set of validated Mental Health Assessments for patients.\n\nThis tool does not provide medical advice, and is for informational and educational purposes only, and is not a substitute for professional medical advice, treatment or diagnosis. Call your doctor to receive medical advice. If you think you may have a medical emergency, please dial your local emergency response phone number."
+          "description":
+            "Full set of validated Mental Health Assessments for patients.\n\nThis tool does not provide medical advice, and is for informational and educational purposes only, and is not a substitute for professional medical advice, treatment or diagnosis. Call your doctor to receive medical advice. If you think you may have a medical emergency, please dial your local emergency response phone number."
         }
       },
       "isAvailableWorldwide": true,
