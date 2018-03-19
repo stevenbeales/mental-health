@@ -1,47 +1,429 @@
 {
-    "interactionModel":{
-        "languageModel":{
-            "invocationName":"hello world",
-            "types":[],
-            "intents":[
-                {
-                  "name": "AMAZON.CancelIntent",
-                  "samples": []
-                },
-                {
-                  "name": "AMAZON.HelpIntent",
-                  "samples": []
-                },
-                {
-                  "name": "AMAZON.StopIntent",
-                  "samples": []
-                },
-                {
-                    "name":"HelloWorldIntent",
-                    "slots":[
-
-                    ],
-                    "samples":[
-                        "hello",
-                        "say hello",
-                        "say hello world"
-                    ]
-                },
-                {
-                    "name":"MyNameIsIntent",
-                    "slots":[
-                        {
-                            "name":"name",
-                            "type":"AMAZON.US_FIRST_NAME"
-                        }
-                    ],
-                    "samples":[
-                        "my name is {name}",
-                        "i am {name}",
-                        "you can call me {name}"
-                    ]
-                }
-            ]
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "mental health",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "What can I do",
+            "I'm stuck"
+          ]
+        },
+        {
+          "name": "AMAZON.MoreIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.PauseIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ResumeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StartOverIntent",
+          "samples": [
+            "Start",
+            "Start Over"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": [
+            "OK",
+            "Okay"
+          ]
+        },
+        {
+          "name": "ListTests",
+          "slots": [
+            {
+              "name": "test",
+              "type": "TEST"
+            }
+          ],
+          "samples": [
+            "List {test}",
+            "{test}"
+          ]
+        },
+        {
+          "name": "SaveTest",
+          "slots": [
+            {
+              "name": "save",
+              "type": "SAVE"
+            },
+            {
+              "name": "test",
+              "type": "TEST"
+            },
+            {
+              "name": "testname",
+              "type": "TEST_NAME"
+            }
+          ],
+          "samples": [
+            "{save} ",
+            "{save} {test}"
+          ]
+        },
+        {
+          "name": "StartTest",
+          "slots": [
+            {
+              "name": "testname",
+              "type": "TEST_NAME",
+              "samples": [
+                "List Tests"
+              ]
+            },
+            {
+              "name": "test",
+              "type": "TEST"
+            },
+            {
+              "name": "open",
+              "type": "OPEN"
+            },
+            {
+              "name": "screen",
+              "type": "SCREEN"
+            }
+          ],
+          "samples": [
+            "{open} {testname} {test} ",
+            "{open} {test} {testname}",
+            "{open} the {testname} {test} questions",
+            "{open} the {testname} {test}",
+            "{screen} me for {testname}"
+          ]
+        },
+        {
+          "name": "ReadEntry",
+          "slots": [
+            {
+              "name": "day",
+              "type": "AMAZON.DATE"
+            },
+            {
+              "name": "read",
+              "type": "READ"
+            },
+            {
+              "name": "log",
+              "type": "LOG"
+            }
+          ],
+          "samples": [
+            "{read} {day}"
+          ]
+        },
+        {
+          "name": "ReadAll",
+          "slots": [
+            {
+              "name": "read",
+              "type": "READ"
+            }
+          ],
+          "samples": [
+            "{read} everything",
+            "{read} all"
+          ]
+        },
+        {
+          "name": "ReadLast",
+          "slots": [
+            {
+              "name": "read",
+              "type": "READ",
+              "samples": [
+                "Yes"
+              ]
+            },
+            {
+              "name": "log",
+              "type": "LOG"
+            },
+            {
+              "name": "n",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "{read} last {n} {log}",
+            "{read} last {log}",
+            "{read} last "
+          ]
+        },
+        {
+          "name": "NextEntry",
+          "slots": [
+            {
+              "name": "log",
+              "type": "LOG"
+            }
+          ],
+          "samples": [
+            "Next {log}"
+          ]
+        },
+        {
+          "name": "DeleteEntry",
+          "slots": [
+            {
+              "name": "log",
+              "type": "LOG"
+            }
+          ],
+          "samples": [
+            "Delete {log}"
+          ]
         }
-    }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "id": "",
+              "name": {
+                "value": "Open",
+                "synonyms": [
+                  "Start",
+                  "Begin",
+                  "Launch",
+                  "Run",
+                  "Say",
+                  "Ask"
+                ]
+              }
+            }
+          ],
+          "name": "OPEN"
+        },
+        {
+          "values": [
+            {
+              "id": "",
+              "name": {
+                "value": "Save",
+                "synonyms": [
+                  "Store"
+                ]
+              }
+            }
+          ],
+          "name": "SAVE"
+        },
+        {
+          "values": [
+            {
+              "id": "",
+              "name": {
+                "value": "Screen",
+                "synonyms": [
+                  "Test",
+                  "Diagnoze",
+                  "Diagnose",
+                  "Assess"
+                ]
+              }
+            }
+          ],
+          "name": "SCREEN"
+        },
+        {
+          "values": [
+            {
+              "id": "",
+              "name": {
+                "value": "Test",
+                "synonyms": [
+                  "Survey",
+                  "Questionnaire",
+                  "Assessment",
+                  "Screener",
+                  "Instrument",
+                  "Surveys",
+                  "Questionnaires",
+                  "Instruments",
+                  "Screeners",
+                  "Assessments",
+                  "Form",
+                  "Forms"
+                ]
+              }
+            }
+          ],
+          "name": "TEST"
+        },
+        {
+          "values": [
+            {
+              "id": "",
+              "name": {
+                "value": "Anxiety",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Bipolar",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Depression",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "",
+              "name": {
+                "value": "Schizoprhenia",
+                "synonyms": []
+              }
+            }
+          ],
+          "name": "TEST_NAME"
+        },
+        {
+          "values": [
+            {
+              "id": "",
+              "name": {
+                "value": "Read",
+                "synonyms": [
+                  "Speak"
+                ]
+              }
+            }
+          ],
+          "name": "READ"
+        },
+        {
+          "values": [
+            {
+              "id": "",
+              "name": {
+                "value": "log",
+                "synonyms": [
+                  "entries",
+                  "entry",
+                  "logs"
+                ]
+              }
+            }
+          ],
+          "name": "LOG"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "StartTest",
+          "confirmationRequired": false,
+          "slots": [
+            {
+              "name": "testname",
+              "type": "TEST_NAME",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Intent-StartTest.IntentSlot-testname"
+              }
+            },
+            {
+              "name": "test",
+              "type": "TEST",
+              "elicitationRequired": false,
+              "confirmationRequired": false
+            },
+            {
+              "name": "open",
+              "type": "OPEN",
+              "elicitationRequired": false,
+              "confirmationRequired": false
+            },
+            {
+              "name": "screen",
+              "type": "SCREEN",
+              "elicitationRequired": false,
+              "confirmationRequired": false
+            }
+          ]
+        },
+        {
+          "name": "ReadLast",
+          "confirmationRequired": false,
+          "slots": [
+            {
+              "name": "read",
+              "type": "READ",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.248783830974.1204438173015"
+              }
+            },
+            {
+              "name": "log",
+              "type": "LOG",
+              "elicitationRequired": false,
+              "confirmationRequired": false
+            },
+            {
+              "name": "n",
+              "type": "AMAZON.NUMBER",
+              "elicitationRequired": false,
+              "confirmationRequired": false
+            }
+          ]
+        }
+      ]
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Intent-StartTest.IntentSlot-testname",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please ask me to List Tests"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.248783830974.1204438173015",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Do you want me to read last entry?"
+          }
+        ]
+      }
+    ]
+  }
 }
